@@ -8,7 +8,7 @@ class Achievement {
     String description = "" // description of requirements
     URL icon // url for achievement icon
 
-    // cardinalities
+    // cardinality
     static hasOne = [achievementList: AchievementList]
 
     // constraints
@@ -18,7 +18,7 @@ class Achievement {
         icon nullable: false
         type nullable: false
 
-        // min/max
+        // range constraints
         type min: 1 // type values will start at 1
     }
 }

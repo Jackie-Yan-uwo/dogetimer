@@ -6,6 +6,7 @@ class AchievementList {
     static belongsTo = [profile: UserProfile]
 
     static constraints = {
+        // leave empty for now
     }
 
 }

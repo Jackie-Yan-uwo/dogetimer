@@ -18,9 +18,9 @@ class UserProfile {
         // null constraints
         displayName nullable: false // can't have empty display name
 
-        // mins
-        userExp min: 0 as int
-        gold min: 0 as int
+        // range constraints
+        userExp min: 0
+        gold min: 0
     }
 
 }

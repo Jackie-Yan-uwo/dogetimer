@@ -8,8 +8,7 @@ class TaskList {
     static belongsTo = [profile: UserProfile]
 
     static constraints = {
-        // null constraints
-        timer nullable: false
+        // leave empty for now
     }
 
 }
