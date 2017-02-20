@@ -16,7 +16,7 @@ class AchievementListSpec extends Specification {
     }
 
     void "test something"() {
-        expect:"fix me"
+        expect:"fix me abcd"
             true == false
     }
 }
