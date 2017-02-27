@@ -6,24 +6,24 @@ class UserAccount {
     String password
     String username
     String email
-    URL avatar
+//    URL avatar
 
-    // cardinalities
-    static hasOne = [profile: UserProfile]
+//    // cardinalities
+//    static hasOne = [profile: UserProfile, task: Task]
 
     // constraints
-    static constraints = {
-        // uniqueness constraints
-        username unique: true
-        email unique: true
-        profile unique: true
-
-        // null constraints
-        password nullable: false
-        username nullable: false
-        avatar nullable: true
-        profile nullable: false
-        email nullable: false
-    }
+//    static constraints = {
+//        // uniqueness constraints
+//        username unique: true
+//        email unique: true
+////        profile unique: true
+//
+//        // null constraints
+//        password nullable: false
+//        username nullable: false
+////        avatar nullable: true
+////        profile nullable: false
+//        email nullable: false
+//    }
 
 }
