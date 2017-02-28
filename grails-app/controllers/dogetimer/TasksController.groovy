@@ -2,18 +2,16 @@ package dogetimer
 
 import grails.rest.RestfulController
 
-class TaskController extends RestfulController {
+class TasksController extends RestfulController {
 
-    static allowedMethods = [getTasks: 'GET']
+    static allowedMethods = [getTasks: 'GET', createTask: 'POST']
     static responseFormats = ['json', 'xml']
 
-    TaskController() {
+    TasksController() {
         super(UserAccount)
     }
 
-    def index() {
 
-    }
 
     // @Secured['ROLE_USER']
     // Our first POST-enabled method
@@ -28,19 +26,29 @@ class TaskController extends RestfulController {
         // this searches the table for username == uname
         def account = UserAccount.find{userName == uname}
 
-//        def task = account.getTasks()
+        if (account!=null) {
+            response.status=200
+            respond account.getProfile().tasks
+        } else {
+            response.status = 404
+        }
 
-        respond account.getProfile().tasks
-
-//
-//        def response = [:]
-//        resp['userName'] = uname
-//        resp['taskName'] = task
-//        render response as JSON
 
     }
 
-    def debug() {
+    def createTask() {
+        //TODO create new Task for user here
+    }
+
+    def updateTask() {
+        //TODO Update task here
+    }
+
+    def deleteTask() {
+        //TODO delete task here
+    }
+
+    def index() {
 
     }
 
