@@ -2,25 +2,16 @@ package dogetimer
 
 class UserProfile {
 
-    String displayName = "" // display name defaults to username
-//    String rank // will have ranks that one progresses through (ex. unrepentant slacker)
-//    int userExp = 0 // exp total
-//    int gold = 0 // gold total
+    // Grails can correctly 'guess' the association between 'this' and
+    // the Profile called userProfile in the UserAccount class
+    // i.e. it is correctly inferring the 1-to-1 relationship
+    UserAccount ownerAccount
 
-    // cardinality
-//    static belongsTo = [account: UserAccount]
-//
-//    static constraints = {
-//        // uniqueness constraints
-//        rank unique: true
-//        account unique: true
-//
-//        // null constraints
-//        displayName nullable: false // can't have empty display name
-//
-//        // range constraints
-//        userExp min: 0
-//        gold min: 0
-//    }
+    static hasMany = [tasks : Task]
 
+
+    static constraints = {
+        tasks nullable: true
+
+    }
 }

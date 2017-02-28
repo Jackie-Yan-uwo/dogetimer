@@ -3,27 +3,20 @@ package dogetimer
 class UserAccount {
 
     // instance variables
-    String password
-    String username
     String email
-//    URL avatar
+    String userName
+    String password
 
-//    // cardinalities
-//    static hasOne = [profile: UserProfile, task: Task]
+    // hasOne property should be on the owning object
+    // e.g. UserAccount owns the Profile
+    static hasOne = [userProfile : UserProfile]
 
-    // constraints
-//    static constraints = {
-//        // uniqueness constraints
-//        username unique: true
-//        email unique: true
-////        profile unique: true
-//
-//        // null constraints
-//        password nullable: false
-//        username nullable: false
-////        avatar nullable: true
-////        profile nullable: false
-//        email nullable: false
-//    }
+    def getProfile(){
+        return userProfile
+    }
 
+    static constraints = {
+        userProfile nullable: true // Allows a UserAccount to be created without a Profile
+        userProfile unique: true // Ensures that UserAccounts must be associated with unique Profiles
+    }
 }

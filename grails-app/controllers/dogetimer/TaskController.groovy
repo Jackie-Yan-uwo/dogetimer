@@ -1,11 +1,10 @@
 package dogetimer
 
-import grails.converters.JSON
 import grails.rest.RestfulController
 
 class TaskController extends RestfulController {
 
-    static allowedMethods = [getTask: 'GET']
+    static allowedMethods = [getTasks: 'GET']
     static responseFormats = ['json', 'xml']
 
     TaskController() {
@@ -19,7 +18,7 @@ class TaskController extends RestfulController {
     // @Secured['ROLE_USER']
     // Our first POST-enabled method
     // We just want to get the status text and save it to the profile.
-    def getTask(){
+    def getTasks(){
 
         // usename -> things we are getting from json they are sending us in a post method
         def uname = params.uname
@@ -27,17 +26,21 @@ class TaskController extends RestfulController {
         System.out.print(uname)
 
         // this searches the table for username == uname
-        def account = UserAccount.find{username == uname}
+        def account = UserAccount.find{userName == uname}
 
-//        def task = account.getTask()
+//        def task = account.getTasks()
 
-        respond account
+        respond account.getProfile().tasks
 
 //
 //        def response = [:]
 //        resp['userName'] = uname
 //        resp['taskName'] = task
 //        render response as JSON
+
+    }
+
+    def debug() {
 
     }
 
