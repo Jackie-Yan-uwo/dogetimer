@@ -6,7 +6,7 @@ class UrlMappings {
         // task controller test
 
         // Handles routes according to the structure. $action = method
-        // Controller Name Corresponds to whatever comes before Controller (ie. TasksController = /api/tasks
+        // Controller Name Corresponds to whatever comes before Controller (ie. TaskController = /api/tasks
 
         "/api/$controller/$action"{
 

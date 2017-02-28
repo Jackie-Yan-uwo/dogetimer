@@ -2,12 +2,12 @@ package dogetimer
 
 import grails.rest.RestfulController
 
-class TasksController extends RestfulController {
+class TaskController extends RestfulController {
 
     static allowedMethods = [getTasks: 'GET', createTask: 'POST']
     static responseFormats = ['json', 'xml']
 
-    TasksController() {
+    TaskController() {
         super(UserAccount)
     }
 

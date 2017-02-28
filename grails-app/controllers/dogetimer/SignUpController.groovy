@@ -3,14 +3,12 @@ package dogetimer
 import grails.rest.RestfulController
 
 class SignUpController extends RestfulController {
-
+    static allowedMethods = [newUser: 'POST']
+    static responseFormats = ['json', 'xml']
 
     SignUpController(){
         super(UserAccount)
     }
-
-    static allowedMethods = [createAccount: 'POST']
-    static responseFormats = ['json', 'xml']
 
     // Navigating to signup is default behaviour
     def index() {
